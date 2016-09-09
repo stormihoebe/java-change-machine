@@ -42,7 +42,7 @@ public class ChangeMachineTest {
   @Test
   public void changeMachine_determinesNumberOfDimesNeeded_7() {
     ChangeMachine testChangeMachine = new ChangeMachine();
-    assertEquals(4, testChangeMachine.makeDimeChange(0.73f));
+    assertEquals(7, testChangeMachine.makeDimeChange(0.73f));
   }
 
 

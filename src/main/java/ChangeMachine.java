@@ -37,4 +37,14 @@ public class ChangeMachine {
     return quarterChangeQuantity;
   }
 
+  public int makeDimeChange(Float totalCash){
+    int dimeChangeQuantity = 0;
+    while (totalCash > 0.10f && mDimes > 0){
+      totalCash -= 0.10f;
+      dimeChangeQuantity += 1;
+      mDimes -= 1;
+    }
+    return dimeChangeQuantity;
+  }
+
 }
