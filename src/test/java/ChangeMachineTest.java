@@ -71,5 +71,12 @@ public class ChangeMachineTest {
     assertEquals(10, testChangeMachine.getDimes());
   }
 
+  @Test
+  public void changeMachine_subtractsNickelsFromTotalWhenGivenAsChange_17() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    testChangeMachine.makeNickelChange(0.17f);
+    assertEquals(17, testChangeMachine.getNickels());
+  }
+
 
 }
