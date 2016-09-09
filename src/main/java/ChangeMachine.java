@@ -27,4 +27,14 @@ public class ChangeMachine {
     return mPennies;
   }
 
+  public int makeQuarterChange(Float totalCash){
+    int quarterChangeQuantity = 0;
+    while (totalCash > 0.25f && mQuarters > 0){
+      totalCash -= 0.25f;
+      quarterChangeQuantity += 1;
+      mQuarters -= 1;
+    }
+    return quarterChangeQuantity;
+  }
+
 }

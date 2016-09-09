@@ -33,5 +33,12 @@ public class ChangeMachineTest {
     assertEquals(20, testChangeMachine.getPennies());
   }
 
+  @Test
+  public void changeMachine_determinesNumberOfQuartersNeeded() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    assertEquals(4, testChangeMachine.makeQuarterChange(1.15f));
+  }
+
+
 
 }
