@@ -12,7 +12,7 @@ public class ChangeMachineTest {
   @Test
   public void newChangeMachine_beginsWith20Quarters_20() {
     ChangeMachine testChangeMachine = new ChangeMachine();
-    assertEquals(20, testRectangle.getQuarters());
+    assertEquals(20, testChangeMachine.getQuarters());
   }
 
 }
