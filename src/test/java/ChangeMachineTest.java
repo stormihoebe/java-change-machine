@@ -57,5 +57,12 @@ public class ChangeMachineTest {
     assertEquals(11, testChangeMachine.makePennyChange(0.11f));
   }
 
+  @Test
+  public void changeMachine_subtractsQuartersFromTotalWhenGivenAsChange_18() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    testChangeMachine.makeQuarterChange(0.55f);
+    assertEquals(18, testChangeMachine.getQuarters());
+  }
+
 
 }
