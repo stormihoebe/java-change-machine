@@ -21,4 +21,11 @@ public class ChangeMachineTest {
     assertEquals(20, testChangeMachine.getDimes());
   }
 
+  @Test
+  public void newChangeMachine_beginsWith20Nickels_20() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    assertEquals(20, testChangeMachine.getNickels());
+  }
+
+
 }
