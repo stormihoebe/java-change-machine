@@ -89,7 +89,7 @@ public class ChangeMachineTest {
   public void makeChange_accuratelyReturnsAllCoinAmounts_String() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     testChangeMachine.makeChange(2.17f);
-    assertEquals(13, testChangeMachine.makeChange(2.17f));
+    assertEquals("Quarters: 8, Dimes: 1, Nickels: 1, Pennies: 2", testChangeMachine.makeChange(2.17f));
   }
 
 
