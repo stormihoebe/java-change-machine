@@ -2,11 +2,13 @@ public class ChangeMachine {
   private int mQuarters;
   private int mDimes;
   private int mNickels;
+  private int mPennies;
 
   public ChangeMachine() {
     mQuarters = 20;
     mDimes = 20;
-    mNickels = 20; 
+    mNickels = 20;
+    mPennies = 20;
   }
 
   public int getQuarters(){
@@ -21,5 +23,8 @@ public class ChangeMachine {
     return mNickels;
   }
 
+  public int getPennies(){
+    return mPennies;
+  }
 
 }
