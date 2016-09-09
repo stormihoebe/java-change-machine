@@ -51,5 +51,11 @@ public class ChangeMachineTest {
     assertEquals(6, testChangeMachine.makeNickelChange(0.33f));
   }
 
+  @Test
+  public void changeMachine_determinesNumberOfPenniesNeeded_11() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    assertEquals(11, testChangeMachine.makePennyChange(0.11f));
+  }
+
 
 }

@@ -49,12 +49,22 @@ public class ChangeMachine {
 
   public int makeNickelChange(Float totalCash){
     int nickelChangeQuantity = 0;
-    while (totalCash > 0.05f && mDimes > 0){
+    while (totalCash > 0.05f && mNickels > 0){
       totalCash -= 0.05f;
       nickelChangeQuantity += 1;
       mNickels -= 1;
     }
     return nickelChangeQuantity;
+  }
+
+  public int makePennyChange(Float totalCash){
+    int pennyChangeQuantity = 0;
+    while (totalCash > 0.01f && mPennies > 0){
+      totalCash -= 0.01f;
+      pennyChangeQuantity += 1;
+      mPennies -= 1;
+    }
+    return pennyChangeQuantity;
   }
 
 }
