@@ -34,48 +34,62 @@ public class ChangeMachineTest {
   }
 
   @Test
-  public void changeMachine_determinesNumberOfQuartersNeeded_4() {
+  public void makeQuarterChange_determinesNumberOfQuartersNeeded_4() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     assertEquals(4, testChangeMachine.makeQuarterChange(1.15f));
   }
 
   @Test
-  public void changeMachine_determinesNumberOfDimesNeeded_7() {
+  public void makeDimeChange_determinesNumberOfDimesNeeded_7() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     assertEquals(7, testChangeMachine.makeDimeChange(0.73f));
   }
 
   @Test
-  public void changeMachine_determinesNumberOfNickelsNeeded_6() {
+  public void makeNickelChange_determinesNumberOfNickelsNeeded_6() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     assertEquals(6, testChangeMachine.makeNickelChange(0.33f));
   }
 
   @Test
-  public void changeMachine_determinesNumberOfPenniesNeeded_11() {
+  public void makePennyChange_determinesNumberOfPenniesNeeded_11() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     assertEquals(11, testChangeMachine.makePennyChange(0.11f));
   }
 
   @Test
-  public void changeMachine_subtractsQuartersFromTotalWhenGivenAsChange_18() {
+  public void makeQuarterChange_subtractsQuartersFromTotalWhenGivenAsChange_18() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     testChangeMachine.makeQuarterChange(0.55f);
     assertEquals(18, testChangeMachine.getQuarters());
   }
 
   @Test
-  public void changeMachine_subtractsDimesFromTotalWhenGivenAsChange_10() {
+  public void makeDimeChange_subtractsDimesFromTotalWhenGivenAsChange_10() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     testChangeMachine.makeDimeChange(1.05f);
     assertEquals(10, testChangeMachine.getDimes());
   }
 
   @Test
-  public void changeMachine_subtractsNickelsFromTotalWhenGivenAsChange_17() {
+  public void makeNickelChange_subtractsNickelsFromTotalWhenGivenAsChange_17() {
     ChangeMachine testChangeMachine = new ChangeMachine();
     testChangeMachine.makeNickelChange(0.17f);
     assertEquals(17, testChangeMachine.getNickels());
+  }
+
+  @Test
+  public void makePennyChange_subtractsPenniesFromTotalWhenGivenAsChange_13() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    testChangeMachine.makePennyChange(0.07f);
+    assertEquals(13, testChangeMachine.getPennies());
+  }
+
+  @Test
+  public void makeChange_accuratelyReturnsAllCoinAmounts_String() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    testChangeMachine.makeChange(2.17f);
+    assertEquals(13, testChangeMachine.makeChange(2.17f));
   }
 
 
