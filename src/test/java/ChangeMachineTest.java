@@ -45,6 +45,11 @@ public class ChangeMachineTest {
     assertEquals(7, testChangeMachine.makeDimeChange(0.73f));
   }
 
+  @Test
+  public void changeMachine_determinesNumberOfNickelsNeeded_6() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    assertEquals(6, testChangeMachine.makeNickelChange(0.33f));
+  }
 
 
 }
