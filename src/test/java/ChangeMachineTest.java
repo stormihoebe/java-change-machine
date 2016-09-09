@@ -15,4 +15,10 @@ public class ChangeMachineTest {
     assertEquals(20, testChangeMachine.getQuarters());
   }
 
+  @Test
+  public void newChangeMachine_beginsWith20Dimes_20() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    assertEquals(20, testChangeMachine.getDimes());
+  }
+
 }
