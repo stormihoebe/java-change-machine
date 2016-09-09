@@ -67,4 +67,15 @@ public class ChangeMachine {
     return pennyChangeQuantity;
   }
 
+  public String makeChange(Float totalCash){
+    int quarterChangeTotal = makeQuarterChange(totalCash);
+    float updatedCashTotal = totalCash - (((float) quarterChangeTotal) * 0.25f);
+    int dimeChangeTotal = makeDimeChange(updatedCashTotal);
+    updatedCashTotal -= (((float) dimeChangeTotal) * 0.10f);
+    int nickelChangeTotal = makeNickelChange(updatedCashTotal);
+    updatedCashTotal -= (((float) nickelChangeTotal) * 0.05f);
+    int pennyChangeTotal = makePennyChange(updatedCashTotal);
+    return String.format("Quarters: %d, Dimes: %d, Nickels: %d, Pennies: %d", quarterChangeTotal, dimeChangeTotal, nickelChangeTotal, pennyChangeTotal);
+  }
+
 }
