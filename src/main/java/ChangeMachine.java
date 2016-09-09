@@ -47,4 +47,14 @@ public class ChangeMachine {
     return dimeChangeQuantity;
   }
 
+  public int makeNickelChange(Float totalCash){
+    int nickelChangeQuantity = 0;
+    while (totalCash > 0.05f && mDimes > 0){
+      totalCash -= 0.05f;
+      nickelChangeQuantity += 1;
+      mNickels -= 1;
+    }
+    return nickelChangeQuantity;
+  }
+
 }
