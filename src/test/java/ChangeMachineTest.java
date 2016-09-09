@@ -64,5 +64,12 @@ public class ChangeMachineTest {
     assertEquals(18, testChangeMachine.getQuarters());
   }
 
+  @Test
+  public void changeMachine_subtractsDimesFromTotalWhenGivenAsChange_10() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    testChangeMachine.makeDimeChange(1.05f);
+    assertEquals(10, testChangeMachine.getDimes());
+  }
+
 
 }
