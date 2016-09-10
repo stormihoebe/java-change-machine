@@ -29,7 +29,7 @@ public class ChangeMachine {
 
   public int makeQuarterChange(Float totalCash){
     int quarterChangeQuantity = 0;
-    while (totalCash > 0.25f && mQuarters > 0){
+    while (totalCash >= 0.25f && mQuarters > 0){
       totalCash -= 0.25f;
       quarterChangeQuantity += 1;
       mQuarters -= 1;
@@ -39,7 +39,7 @@ public class ChangeMachine {
 
   public int makeDimeChange(Float totalCash){
     int dimeChangeQuantity = 0;
-    while (totalCash > 0.10f && mDimes > 0){
+    while (totalCash >= 0.10f && mDimes > 0){
       totalCash -= 0.10f;
       dimeChangeQuantity += 1;
       mDimes -= 1;
@@ -49,7 +49,7 @@ public class ChangeMachine {
 
   public int makeNickelChange(Float totalCash){
     int nickelChangeQuantity = 0;
-    while (totalCash > 0.05f && mNickels > 0){
+    while (totalCash >= 0.05f && mNickels > 0){
       totalCash -= 0.05f;
       nickelChangeQuantity += 1;
       mNickels -= 1;
@@ -59,21 +59,24 @@ public class ChangeMachine {
 
   public int makePennyChange(Float totalCash){
     int pennyChangeQuantity = 0;
-    while (totalCash > 0.01f && mPennies > 0){
-      totalCash -= 0.01f;
+    while (totalCash > 0.009f && mPennies > 0){
       pennyChangeQuantity += 1;
       mPennies -= 1;
+      totalCash -= 0.01f;
     }
     return pennyChangeQuantity;
   }
 
   public String makeChange(Float totalCash){
     int quarterChangeTotal = makeQuarterChange(totalCash);
-    float updatedCashTotal = totalCash - (((float) quarterChangeTotal) * 0.25f);
+    float updatedCashTotal = totalCash - (quarterChangeTotal * 0.25f);
+
     int dimeChangeTotal = makeDimeChange(updatedCashTotal);
-    updatedCashTotal -= (((float) dimeChangeTotal) * 0.10f);
+    updatedCashTotal -= (dimeChangeTotal * 0.10f);
+
     int nickelChangeTotal = makeNickelChange(updatedCashTotal);
-    updatedCashTotal -= (((float) nickelChangeTotal) * 0.05f);
+    updatedCashTotal -= (nickelChangeTotal * 0.05f);
+
     int pennyChangeTotal = makePennyChange(updatedCashTotal);
     return String.format("Quarters: %d, Dimes: %d, Nickels: %d, Pennies: %d", quarterChangeTotal, dimeChangeTotal, nickelChangeTotal, pennyChangeTotal);
   }
