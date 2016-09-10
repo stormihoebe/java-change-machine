@@ -88,8 +88,14 @@ public class ChangeMachineTest {
   @Test
   public void makeChange_accuratelyReturnsAllCoinAmounts_String() {
     ChangeMachine testChangeMachine = new ChangeMachine();
-    testChangeMachine.makeChange(2.17f);
-    assertEquals("Quarters: 8, Dimes: 1, Nickels: 1, Pennies: 2", testChangeMachine.makeChange(2.17f));
+    assertEquals("Quarters: 8, Dimes: 1, Nickels: 1, Pennies: 3", testChangeMachine.makeChange(2.18f));
+  }
+
+  // Since there are only 20 of each coin, one type may run out. More of another coin should be provided in this case.
+  @Test
+  public void makeChange_providesMoreOfAnotherCoinWhenOneCoinIsOut_String() {
+    ChangeMachine testChangeMachine = new ChangeMachine();
+    assertEquals("Quarters: 20, Dimes: 20, Nickels: 5, Pennies: 2", testChangeMachine.makeChange(7.27f));
   }
 
 
